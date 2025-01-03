@@ -1,12 +1,14 @@
-<div class="bg-green-900 py-16">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-white text-center mb-8">
-      Liste des produits disponibles en stock
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      @for (product of product$ | async; track product.id) {
-      <app-product-card [product]="product" />
-      }
-    </div>
-  </div>
+<div>
+  <h2
+    class="text-3xl bg-green-900 font-bold text-white text-center mb-0 mt-0 md:mb-0 md:mt-0"
+  >
+    Liste des produits disponibles en stock
+  </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 bg-green-900 p-16">
+  @if (isLoading) { @for (item of [1,2,3]; track item) {
+  <app-product-card-skeleton [items]="items" />
+  } } @else { @for (product of products; track product.id) {
+  <app-product-card [product]="product" />
+  } }
 </div>
