@@ -1,6 +1,7 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { Product } from '../../models/product';
 import { CurrencyPipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-card',
@@ -11,4 +12,10 @@ import { CurrencyPipe } from '@angular/common';
 })
 export class ProductCardComponent {
   product = input.required<Product>();
+  router = inject(Router);
+
+  navigateToProductDetails() {
+    const id = this.product().id;
+    this.router.navigate(['/products', id]);
+  }
 }

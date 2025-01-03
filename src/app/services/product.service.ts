@@ -12,4 +12,8 @@ export class ProductService {
   getProducts() {
     return this.http.get<Product[]>(this.baseApiUrl);
   }
+
+  getProduct(id: string) {
+    return this.http.get<Product>(`${this.baseApiUrl}/${id}`);
+  }
 }
