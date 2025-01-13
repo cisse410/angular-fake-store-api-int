@@ -1,11 +1,11 @@
 <div>
   <h2
-    class="text-3xl bg-green-900 font-bold text-white text-center mb-0 mt-0 md:mb-0 md:mt-0"
+    class="text-3xl bg-white font-bold text-black text-center mb-0 mt-0 md:mb-0 md:mt-0"
   >
     Liste des produits disponibles en stock
   </h2>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 bg-green-900 p-16">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 bg-white p-16">
   @if (isLoading) { @for (item of [1,2,3]; track item) {
   <app-product-card-skeleton [items]="items" />
   } } @else { @for (product of products; track product.id) {
