@@ -1,0 +1,72 @@
+@if ($cartItem(); as item) {
+<div class="p-4 max-w-6xl mx-auto mt-16">
+  <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+    <div class="flex items-center justify-between px-4 py-3 bg-gray-200">
+      <h1 class="text-lg font-bold">Mon panier</h1>
+      <span class="text-gray-600">{{ total() }} produit(s)</span>
+    </div>
+    <div class="p-4">
+      <div class="flex items-center mb-4">
+        <img
+          class="h-16 w-16 object-contain rounded-lg mr-4"
+          [src]="item.image"
+          [alt]="item.title"
+        />
+        <div class="flex-1">
+          <h2 class="text-lg font-bold">{{ item.title }}</h2>
+          <span class="text-gray-600">$29.99</span>
+        </div>
+        <!-- <button class="text-gray-600 hover:text-blue-500 rounded"> -->
+        <button
+          class="mt-4 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
+        >
+          Supprimer
+        </button>
+      </div>
+      <div class="flex items-center mb-4">
+        <img
+          class="h-16 w-16 object-contain rounded-lg mr-4"
+          src="https://picsum.photos/200/200"
+          alt="Product"
+        />
+        <div class="flex-1">
+          <h2 class="text-lg font-bold">Product Title</h2>
+          <span class="text-gray-600">$19.99</span>
+        </div>
+        <button
+          class="mt-4 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
+        >
+          Supprimer
+        </button>
+      </div>
+      <div class="flex items-center">
+        <img
+          class="h-16 w-16 object-contain rounded-lg mr-4"
+          src="https://picsum.photos/200/200"
+          alt="Product"
+        />
+        <div class="flex-1">
+          <h2 class="text-lg font-bold">Product Title</h2>
+          <span class="text-gray-600">$24.99</span>
+        </div>
+        <button
+          class="mt-4 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
+        >
+          Supprimer
+        </button>
+      </div>
+    </div>
+    <div class="px-4 py-3 bg-gray-200">
+      <div class="flex justify-between items-center">
+        <span class="font-bold text-lg">Total:</span>
+        <span class="font-bold text-lg">$74.97</span>
+      </div>
+      <button
+        class="block w-full mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+      >
+        Procéder au paiement
+      </button>
+    </div>
+  </div>
+</div>
+}
